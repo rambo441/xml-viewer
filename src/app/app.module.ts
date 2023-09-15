@@ -34,7 +34,20 @@ import { FormsModule } from '@angular/forms';
   MatProgressBarModule,
   MatListModule,
   NoopAnimationsModule,
-  MarkdownModule.forRoot(),
+  MarkdownModule.forRoot(
+    {
+      markedOptions: {
+        provide: MarkedOptions,
+        useValue: {
+          gfm: true,
+          breaks: false,
+          pedantic: false,
+          smartLists: true,
+          smartypants: false,
+        },
+      },
+    }
+  ),
   FormsModule
   ],
   providers: [],
